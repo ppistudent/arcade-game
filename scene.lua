@@ -1,6 +1,7 @@
 local class = require("class")
 local scene = class:extend()
 
+--- Конструктор сцены
 function scene:new()
 	-- Close old scene, if it exists 
 	if scene.current then
@@ -17,12 +18,14 @@ end
 
 -- XXX: scene.interrupt and scene.resume are bad stuff, used only for pause menu
 
+--- Переключиться на другую сцену
 function scene.interrupt(by, ...)
 	scene.interrupted = scene.current
 	scene.current = nil
 	by(...)
 end
 
+--- Возобновить предыдущую сцену
 function scene.resume()
 	scene.current:close()	
 	scene.current = nil
@@ -48,6 +51,7 @@ local function update_timers(t, dt)
 	end
 end
 
+--- Обновить сцену
 function scene.update(dt)
 	local current = scene.current
 	assert(current, "Scene not opened!")
@@ -55,6 +59,8 @@ function scene.update(dt)
 	current:update(dt)
 end
 
+
+--- Отрисовать сцену
 function scene.draw()
 	assert(scene.current, "Scene not opened!"):draw()
 end

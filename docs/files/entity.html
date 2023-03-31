@@ -1,0 +1,457 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+    <title>Luadocs for entity.lua</title>
+    <link rel="stylesheet" href="../luadoc.css" type="text/css" />
+    <!--meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/-->
+</head>
+
+<body>
+<div id="container">
+
+<div id="product">
+    <div id="product_logo"></div>
+    <div id="product_name"><big><b></b></big></div>
+    <div id="product_description"></div>
+</div> <!-- id="product" -->
+
+<div id="main">
+
+<div id="navigation">
+
+
+<h1>LuaDoc</h1>
+<ul>
+	
+	<li><a href="../index.html">Index</a></li>
+	
+</ul>
+
+
+<!-- Module list -->
+
+
+
+<!-- File list -->
+
+<h1>Files</h1>
+<ul>
+
+	<li>
+		<a href="../files/animation.html">animation.lua</a>
+	</li>
+
+	<li>
+		<a href="../files/assets.html">assets.lua</a>
+	</li>
+
+	<li>
+		<a href="../files/background_effect.html">background_effect.lua</a>
+	</li>
+
+	<li>
+		<a href="../files/camera.html">camera.lua</a>
+	</li>
+
+	<li>
+		<a href="../files/class.html">class.lua</a>
+	</li>
+
+	<li>
+		<a href="../files/conf.html">conf.lua</a>
+	</li>
+
+	<li><strong>entity.lua</strong></li>
+	
+	<li>
+		<a href="../files/level.html">level.lua</a>
+	</li>
+
+	<li>
+		<a href="../files/main.html">main.lua</a>
+	</li>
+
+	<li>
+		<a href="../files/object.html">object.lua</a>
+	</li>
+
+	<li>
+		<a href="../files/scene.html">scene.lua</a>
+	</li>
+
+	<li>
+		<a href="../files/timer.html">timer.lua</a>
+	</li>
+
+	<li>
+		<a href="../files/vec2.html">vec2.lua</a>
+	</li>
+
+</ul>
+
+
+
+
+
+
+</div> <!-- id="navigation" -->
+
+<div id="content">
+
+<h1>File <code>entity.lua</code></h1>
+
+
+
+
+
+
+
+<h2>Functions</h2>
+<table class="function_list">
+
+    <tr>
+    <td class="name" nowrap><a href="#entity:draw">entity:draw</a>&nbsp;(sb)</td>
+    <td class="summary">Метод отрисовки сущности </td>
+    </tr>
+
+    <tr>
+    <td class="name" nowrap><a href="#entity:heal">entity:heal</a>&nbsp;(v)</td>
+    <td class="summary">Вылечить сущность </td>
+    </tr>
+
+    <tr>
+    <td class="name" nowrap><a href="#entity:hurt">entity:hurt</a>&nbsp;(v)</td>
+    <td class="summary">Нанести урон сущности </td>
+    </tr>
+
+    <tr>
+    <td class="name" nowrap><a href="#entity:kill">entity:kill</a>&nbsp;()</td>
+    <td class="summary">Уничтожить сущность </td>
+    </tr>
+
+    <tr>
+    <td class="name" nowrap><a href="#entity:move">entity:move</a>&nbsp;(x, y)</td>
+    <td class="summary">Передвинуть сущность </td>
+    </tr>
+
+    <tr>
+    <td class="name" nowrap><a href="#entity:new">entity:new</a>&nbsp;(...)</td>
+    <td class="summary">Конструктор сущности </td>
+    </tr>
+
+    <tr>
+    <td class="name" nowrap><a href="#entity:safe_set_state">entity:safe_set_state</a>&nbsp;(state)</td>
+    <td class="summary">Установка состояния со сбросом таймера </td>
+    </tr>
+
+    <tr>
+    <td class="name" nowrap><a href="#entity:stun">entity:stun</a>&nbsp;(t)</td>
+    <td class="summary">Оглушить сущность </td>
+    </tr>
+
+    <tr>
+    <td class="name" nowrap><a href="#entity:throw">entity:throw</a>&nbsp;(t, velocity)</td>
+    <td class="summary">Бросить сущность в направлении </td>
+    </tr>
+
+    <tr>
+    <td class="name" nowrap><a href="#entity:update">entity:update</a>&nbsp;(dt)</td>
+    <td class="summary">Метод обновления сущности </td>
+    </tr>
+
+</table>
+
+
+
+
+
+
+<br/>
+<br/>
+
+
+
+
+<h2><a name="functions"></a>Functions</h2>
+<dl class="function">
+
+
+
+<dt><a name="entity:draw"></a><strong>entity:draw</strong>&nbsp;(sb)</dt>
+<dd>
+Метод отрисовки сущности
+
+
+<h3>Parameters</h3>
+<ul>
+	
+	<li>
+	  sb: 
+	</li>
+	
+</ul>
+
+
+
+
+
+
+
+
+</dd>
+
+
+
+
+<dt><a name="entity:heal"></a><strong>entity:heal</strong>&nbsp;(v)</dt>
+<dd>
+Вылечить сущность
+
+
+<h3>Parameters</h3>
+<ul>
+	
+	<li>
+	  v: 
+	</li>
+	
+</ul>
+
+
+
+
+
+
+
+
+</dd>
+
+
+
+
+<dt><a name="entity:hurt"></a><strong>entity:hurt</strong>&nbsp;(v)</dt>
+<dd>
+Нанести урон сущности
+
+
+<h3>Parameters</h3>
+<ul>
+	
+	<li>
+	  v: 
+	</li>
+	
+</ul>
+
+
+
+
+
+
+
+
+</dd>
+
+
+
+
+<dt><a name="entity:kill"></a><strong>entity:kill</strong>&nbsp;()</dt>
+<dd>
+Уничтожить сущность
+
+
+
+
+
+
+
+
+
+</dd>
+
+
+
+
+<dt><a name="entity:move"></a><strong>entity:move</strong>&nbsp;(x, y)</dt>
+<dd>
+Передвинуть сущность
+
+
+<h3>Parameters</h3>
+<ul>
+	
+	<li>
+	  x: 
+	</li>
+	
+	<li>
+	  y: 
+	</li>
+	
+</ul>
+
+
+
+
+
+
+
+
+</dd>
+
+
+
+
+<dt><a name="entity:new"></a><strong>entity:new</strong>&nbsp;(...)</dt>
+<dd>
+Конструктор сущности
+
+
+<h3>Parameters</h3>
+<ul>
+	
+	<li>
+	  ...: 
+	</li>
+	
+</ul>
+
+
+
+
+
+
+
+
+</dd>
+
+
+
+
+<dt><a name="entity:safe_set_state"></a><strong>entity:safe_set_state</strong>&nbsp;(state)</dt>
+<dd>
+Установка состояния со сбросом таймера
+
+
+<h3>Parameters</h3>
+<ul>
+	
+	<li>
+	  state: 
+	</li>
+	
+</ul>
+
+
+
+
+
+
+
+
+</dd>
+
+
+
+
+<dt><a name="entity:stun"></a><strong>entity:stun</strong>&nbsp;(t)</dt>
+<dd>
+Оглушить сущность
+
+
+<h3>Parameters</h3>
+<ul>
+	
+	<li>
+	  t: 
+	</li>
+	
+</ul>
+
+
+
+
+
+
+
+
+</dd>
+
+
+
+
+<dt><a name="entity:throw"></a><strong>entity:throw</strong>&nbsp;(t, velocity)</dt>
+<dd>
+Бросить сущность в направлении
+
+
+<h3>Parameters</h3>
+<ul>
+	
+	<li>
+	  t: 
+	</li>
+	
+	<li>
+	  velocity: 
+	</li>
+	
+</ul>
+
+
+
+
+
+
+
+
+</dd>
+
+
+
+
+<dt><a name="entity:update"></a><strong>entity:update</strong>&nbsp;(dt)</dt>
+<dd>
+Метод обновления сущности
+
+
+<h3>Parameters</h3>
+<ul>
+	
+	<li>
+	  dt: 
+	</li>
+	
+</ul>
+
+
+
+
+
+
+
+
+</dd>
+
+
+</dl>
+
+
+
+
+
+
+
+</div> <!-- id="content" -->
+
+</div> <!-- id="main" -->
+
+<div id="about">
+    <p><a href="http://validator.w3.org/check?uri=referer"><img src="http://www.w3.org/Icons/valid-xhtml10" alt="Valid XHTML 1.0!" height="31" width="88" /></a></p>
+</div> <!-- id="about" -->
+
+</div> <!-- id="container" -->
+</body>
+</html>

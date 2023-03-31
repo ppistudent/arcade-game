@@ -18,6 +18,7 @@ entity.speed = nil
 entity.shield = 0
 entity.solid = false
 
+--- Конструктор сущности
 function entity:new(...)
 	object.new(self, ...)
 	-- Animation state 
@@ -38,6 +39,7 @@ function entity:new(...)
 	self.smacked_on_wall_y = false
 end
 
+--- Метод обновления сущности
 function entity:update(dt)
 	-- Reset state, if needed
 	if self.state == "moving" and self.velocity:len2() == 0 then
@@ -76,6 +78,7 @@ function entity:update(dt)
 	end
 end
 
+--- Метод отрисовки сущности
 function entity:draw(sb)
 	object.draw(self)
 	if self.shield == 0 or math.floor(self.shield * 8) % 2 == 0 then
@@ -83,6 +86,7 @@ function entity:draw(sb)
 	end
 end
 
+--- Установка состояния со сбросом таймера
 function entity:safe_set_state(state)
 	if self.timer then
 		self.timer:stop()
@@ -102,6 +106,7 @@ end
 entity.throw_timeout = return_to_idle
 entity.stun_timeout = return_to_idle
 
+--- Передвинуть сущность
 function entity:move(x, y)
 	if self.state == "idle" or self.state == "moving" then
 		local v = class.is(x, vec2) and x or vec2(x, y)
@@ -115,6 +120,8 @@ function entity:move(x, y)
 	end
 end
 
+
+--- Бросить сущность в направлении
 function entity:throw(t, velocity)
 	if self.state == "idle" or self.state == "moving" then
 		self.state = "thrown"
@@ -124,6 +131,7 @@ function entity:throw(t, velocity)
 	end
 end
 
+--- Оглушить сущность
 function entity:stun(t)
 	if self.state == "idle" or self.state == "moving" then
 		self.state = "stunned"
@@ -132,6 +140,7 @@ function entity:stun(t)
 	end
 end
 
+--- Нанести урон сущности
 function entity:hurt(v)
 	if self.shield == 0 then
 		self.health = math.max(0, self.health - v)
@@ -144,10 +153,12 @@ function entity:hurt(v)
 	end
 end
 
+--- Вылечить сущность
 function entity:heal(v)
 	self.health = math.min(self.health + v, self:super().health)
 end
 
+--- Уничтожить сущность
 function entity:kill()
 	self:safe_set_state("dead")
 	self.velocity = vec2()
